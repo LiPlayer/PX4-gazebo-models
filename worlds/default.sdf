@@ -15,13 +15,13 @@
       <background>0.7 0.7 0.7 1</background>
       <shadows>true</shadows>
     </scene>
-    <model name="ground_plane">
-      <static>true</static>
-      <include merge='false'>
+    <include>
         <uri>model://a22</uri>
         <pose>0 0 0 0 0 1.57</pose>
         <static>true</static>
-      </include>
+    </include>
+    <model name="ground_plane">
+      <static>true</static>
       <link name="link">
         <collision name="collision">
           <geometry>
