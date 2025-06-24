@@ -1,19 +1,19 @@
 <?xml version="1.0" ?>
 <sdf version="1.9">
-  <model name="airframe0">
+  <model name="aircraft0">
     <static>True</static>
-    <link name="airframe0_link">
-      <visual name="airframe0_visual">
+    <link name="aircraft0_link">
+      <visual name="aircraft0_visual">
         <geometry>
           <mesh>
-            <uri>meshes/visual/airframe0.dae</uri>
+            <uri>meshes/visual/aircraft0.dae</uri>
           </mesh>
         </geometry>
       </visual>
-      <collision name="airframe0_collision">
+      <collision name="aircraft0_collision">
         <geometry>
           <mesh>
-            <uri>meshes/collision/airframe0.stl</uri>
+            <uri>meshes/collision/aircraft0.stl</uri>
           </mesh>
         </geometry>
         <surface>

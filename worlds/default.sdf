@@ -17,7 +17,7 @@
     </scene>
     <include>
         <uri>model://a22</uri>
-        <pose>0 0 0 0 0 1.57</pose>
+        <pose>5 0 0 0 0 4.71</pose>
         <static>true</static>
     </include>
     <model name="ground_plane">
