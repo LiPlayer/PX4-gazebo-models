@@ -5,6 +5,10 @@
       <uri>x500</uri>
     </include>
 
+    <frame name="lidar_origin" attached_to="lidar_sensor_link">
+      <pose>0 0 -0.0325 0 0 0</pose>
+    </frame>
+
     <link name="lidar_sensor_link">
       <pose relative_to="base_link">0 0 0.065 0 0 0</pose>
       <inertial>
@@ -34,7 +38,7 @@
       </visual>
 
       <sensor name='lidar' type='gpu_lidar'>
-        <pose relative_to="base_link">0 0 0.065 0 0 0</pose>
+        <pose relative_to="lidar_origin">0 0 0 0 0 0</pose>
         <topic>/unilidar/lidar</topic>
         <update_rate>10</update_rate>
         <lidar>
@@ -46,7 +50,7 @@
                     <max_angle>3.14159265359</max_angle>
                 </horizontal>
                 <vertical>
-                    <samples>39</samples>
+                    <samples>18</samples>
                     <resolution>1</resolution>
                     <min_angle>0.0</min_angle>
                     <max_angle>1.57079632679</max_angle>
@@ -70,7 +74,7 @@
       </sensor>
 
       <sensor name='imu' type='imu'>
-        <pose relative_to="base_link">0 0 0.065 0 0 0</pose>
+        <pose relative_to="lidar_origin">-0.007698 -0.014655 0.00667 0 0 0</pose>
         <topic>/unilidar/imu</topic>
         <update_rate>500</update_rate>
         <imu>
@@ -130,6 +134,8 @@
         <always_on>1</always_on>
       </sensor>
     </link>
+
+
 
     <joint name="lidar_sensor_joint" type="fixed">
       <parent>base_link</parent>
