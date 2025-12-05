@@ -5,11 +5,8 @@
       <uri>x500</uri>
     </include>
 
-    <frame name="lidar_origin" attached_to="lidar_sensor_link">
-      <pose>0 0 -0.0325 0 0 0</pose>
-    </frame>
 
-    <link name="lidar_sensor_link">
+    <link name="unilidar_link">
       <pose relative_to="base_link">0 0 0.065 0 0 0</pose>
       <inertial>
         <mass>0.23</mass>
@@ -37,8 +34,8 @@
         </material>
       </visual>
 
-      <sensor name='lidar' type='gpu_lidar'>
-        <pose relative_to="lidar_origin">0 0 0 0 0 0</pose>
+      <sensor name='unilidar_lidar' type='gpu_lidar'>
+        <gz_frame_id>/unilidar_lidar</gz_frame_id>
         <topic>/unilidar/lidar</topic>
         <update_rate>10</update_rate>
         <lidar>
@@ -73,10 +70,10 @@
         <visualize>true</visualize>
       </sensor>
 
-      <sensor name='imu' type='imu'>
-        <pose relative_to="lidar_origin">-0.007698 -0.014655 0.00667 0 0 0</pose>
+      <sensor name='unilidar_imu' type='imu'>
+        <gz_frame_id>/unilidar_imu</gz_frame_id>
         <topic>/unilidar/imu</topic>
-        <update_rate>500</update_rate>
+        <update_rate>200</update_rate>
         <imu>
           <angular_velocity>
             <x>
@@ -137,9 +134,9 @@
 
 
 
-    <joint name="lidar_sensor_joint" type="fixed">
+    <joint name="unilidar_joint" type="fixed">
       <parent>base_link</parent>
-      <child>lidar_sensor_link</child>
+      <child>unilidar_link</child>
     </joint>
   </model>
 </sdf>
