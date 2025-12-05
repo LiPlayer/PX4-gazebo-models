@@ -16,9 +16,8 @@
       <shadows>true</shadows>
     </scene>
     <include>
-        <uri>model://a22</uri>
-        <pose>5 0 0 0 0 4.71</pose>
-        <static>true</static>
+        <name>Ionic_Interior</name>
+        <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/Ionic interior</uri>
     </include>
     <model name="ground_plane">
       <static>true</static>
