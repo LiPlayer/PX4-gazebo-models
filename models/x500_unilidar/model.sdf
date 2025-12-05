@@ -35,9 +35,9 @@
       </visual>
 
       <sensor name='unilidar_lidar' type='gpu_lidar'>
-        <gz_frame_id>/unilidar_lidar</gz_frame_id>
+        <gz_frame_id>unilidar_lidar</gz_frame_id>
         <topic>/unilidar/lidar</topic>
-        <update_rate>10</update_rate>
+        <update_rate>5</update_rate>
         <lidar>
             <scan>
                 <horizontal>
@@ -71,9 +71,9 @@
       </sensor>
 
       <sensor name='unilidar_imu' type='imu'>
-        <gz_frame_id>/unilidar_imu</gz_frame_id>
+        <gz_frame_id>unilidar_imu</gz_frame_id>
         <topic>/unilidar/imu</topic>
-        <update_rate>200</update_rate>
+        <update_rate>50</update_rate>
         <imu>
           <angular_velocity>
             <x>
