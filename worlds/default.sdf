@@ -19,6 +19,12 @@
         <name>Depot</name>
         <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Depot</uri>
     </include>
+    <include>
+      <name>a22</name>
+      <uri>model://a22</uri>
+      <pose>0 0 0 0 0 -1.57</pose>
+    </include>
+    
     
     <light name="sunUTC" type="directional">
       <pose>0 0 500 0 -0 0</pose>
