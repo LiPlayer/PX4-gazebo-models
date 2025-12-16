@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.9'>
-  <model name='x500_unilidar'>
+  <model name='x500_gzlidar'>
     <include merge='true'>
       <uri>x500</uri>
     </include>
 
 
-    <link name="unilidar_link">
+    <link name="lidar_link">
       <pose relative_to="base_link">0 0 0.065 0 0 0</pose>
       <inertial>
         <mass>0.23</mass>
@@ -34,9 +34,9 @@
         </material>
       </visual>
 
-      <sensor name='unilidar_lidar' type='gpu_lidar'>
-        <gz_frame_id>unilidar_lidar</gz_frame_id>
-        <topic>/unilidar/lidar</topic>
+      <sensor name='lidar' type='gpu_lidar'>
+        <gz_frame_id>lidar_cloud</gz_frame_id>
+        <topic>/lidar/cloud</topic>
         <update_rate>5</update_rate>
         <lidar>
             <scan>
@@ -70,34 +70,28 @@
         <visualize>true</visualize>
       </sensor>
 
-      <sensor name='unilidar_imu' type='imu'>
-        <gz_frame_id>unilidar_imu</gz_frame_id>
-        <topic>/unilidar/imu</topic>
-        <update_rate>50</update_rate>
+      <sensor name='imu' type='imu'>
+        <gz_frame_id>lidar_imu</gz_frame_id>
+        <topic>/lidar/imu</topic>
+        <update_rate>200</update_rate>
         <imu>
           <angular_velocity>
             <x>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.009</stddev>
-                <bias_mean>0.00075</bias_mean>
-                <bias_stddev>0.0000008</bias_stddev>
+                <stddev>0.0009</stddev>
               </noise>
             </x>
             <y>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.009</stddev>
-                <bias_mean>0.00075</bias_mean>
-                <bias_stddev>0.0000008</bias_stddev>
+                <stddev>0.0009</stddev>
               </noise>
             </y>
             <z>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.009</stddev>
-                <bias_mean>0.00075</bias_mean>
-                <bias_stddev>0.0000008</bias_stddev>
+                <stddev>0.0009</stddev>
               </noise>
             </z>
           </angular_velocity>
@@ -105,25 +99,19 @@
             <x>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.017</stddev>
-                <bias_mean>0.1</bias_mean>
-                <bias_stddev>0.001</bias_stddev>
+                <stddev>0.006</stddev>
               </noise>
             </x>
             <y>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.017</stddev>
-                <bias_mean>0.1</bias_mean>
-                <bias_stddev>0.001</bias_stddev>
+                <stddev>0.006</stddev>
               </noise>
             </y>
             <z>
               <noise type="gaussian">
                 <mean>0.0</mean>
-                <stddev>0.017</stddev>
-                <bias_mean>0.1</bias_mean>
-                <bias_stddev>0.001</bias_stddev>
+                <stddev>0.006</stddev>
               </noise>
             </z>
           </linear_acceleration>
@@ -134,9 +122,9 @@
 
 
 
-    <joint name="unilidar_joint" type="fixed">
+    <joint name="lidar_joint" type="fixed">
       <parent>base_link</parent>
-      <child>unilidar_link</child>
+      <child>lidar_link</child>
     </joint>
   </model>
 </sdf>
