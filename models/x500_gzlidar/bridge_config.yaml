@@ -14,3 +14,10 @@
   ros_type_name: "rosgraph_msgs/msg/Clock"
   gz_type_name: "gz.msgs.Clock"
   direction: GZ_TO_ROS
+
+# Ground-truth odometry for VIO bridge -> PX4 visual odometry
+- ros_topic_name: "/model/x500_gzlidar_0/odometry_with_covariance"
+  gz_topic_name: "/model/x500_gzlidar_0/odometry_with_covariance"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "gz.msgs.OdometryWithCovariance"
+  direction: GZ_TO_ROS
